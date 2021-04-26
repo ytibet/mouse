@@ -1,0 +1,9 @@
+while(True):
+    ret, frame = cap.read()
+    rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2BGRA)
+
+    cv2.imshow('Goruntu almak icin tiklayin', rgb)
+
+    if cv2.waitKey(1) & 0xFF == 27: #ascii esc demek
+        cv2.imwrite("test.jpg", frame)
+        break
